@@ -24,6 +24,15 @@ export default {
         }
     },
 
+    async getUsers(req, res) {
+        try {
+            const users = await prisma.user.findMany()
+            return res.json(users)
+        } catch (error) {
+            return res.json({ error })
+        }
+    },
+
     async findAllUser(req, res) {
         try {
             const users = await prisma.user.findMany()

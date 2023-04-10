@@ -7,6 +7,5 @@ const app = express()
 app.use(express.json())
 app.use(router)
 
-app.listen(3030, () => {
-    console.log('Server listening on port 3030')
-})
+const PORT = 3030
+app.listen(process.env.PORT || PORT, ()=> console.log("RUN SERVER " + PORT))
